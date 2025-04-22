@@ -1,0 +1,22 @@
+
+{
+  "manifest_version": 3,
+  "name": "CPI Smart Assistant",
+  "version": "1.0",
+  "description": "Analyze SAP CPI iFlow errors with AI suggestions.",
+  "permissions": ["storage", "scripting", "activeTab"],
+  "host_permissions": ["https://*.hana.ondemand.com/*"],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": "assets/icon.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://*.hana.ondemand.com/*"],
+      "js": ["content.js"]
+    }
+  ]
+}
